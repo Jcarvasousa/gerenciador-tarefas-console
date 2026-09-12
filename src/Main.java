@@ -1,6 +1,7 @@
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -102,7 +103,8 @@ public class Main {
                     break;
 
                 case 4:
-                    if (gerenciador.getTarefas().isEmpty()) {
+                    List<Tarefa> tarefasParaEditar = gerenciador.getTarefas();
+                    if (tarefasParaEditar.isEmpty()) {
                         System.out.println("Não há tarefas para editar.");
                         break;
                     }
@@ -116,12 +118,12 @@ public class Main {
                     int indiceEdicao = scanner.nextInt();
                     scanner.nextLine();
 
-                    if (indiceEdicao < 0 || indiceEdicao >= gerenciador.getTarefas().size()) {
+                    if (indiceEdicao < 0 || indiceEdicao >= tarefasParaEditar.size()) {
                         System.out.println("Índice inválido.");
                         break;
                     }
 
-                    Tarefa tarefaAtual = gerenciador.getTarefas().get(indiceEdicao);
+                    Tarefa tarefaAtual = tarefasParaEditar.get(indiceEdicao);
 
                     String novoTitulo = null;
                     System.out.print("Título atual: " + tarefaAtual.getTitulo() + "\nNovo título (Enter para manter): ");
