@@ -1,6 +1,8 @@
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Tarefa {
+public class Tarefa implements Serializable {
+    private static final long serialVersionUID = 1L;
     public enum StatusTarefa {
         PENDENTE,
         EM_ANDAMENTO,

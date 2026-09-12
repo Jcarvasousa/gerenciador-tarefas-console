@@ -1,4 +1,5 @@
 ## IntelliJ IDEA ###
+*.dat
 *.class
 out/
 !**/src/main/**/out/
